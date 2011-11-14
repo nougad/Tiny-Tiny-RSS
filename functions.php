@@ -840,7 +840,7 @@
 					!ini_get("open_basedir")) {
 
 					$callback_url = get_self_url_prefix() .
-						"/backend.php?op=pubsub&id=$feed";
+						"/public.php?op=pubsub&id=$feed";
 
 					$s = new Subscriber($feed_hub_url, $callback_url);
 
@@ -1284,7 +1284,7 @@
 
 						if (PUBSUBHUBBUB_HUB && $published == 'true') {
 							$rss_link = get_self_url_prefix() .
-								"/backend.php?op=rss&id=-2&key=" .
+								"/public.php?op=rss&id=-2&key=" .
 								get_feed_access_key($link, -2, false, $owner_uid);
 
 							$p = new Publisher(PUBSUBHUBBUB_HUB);
@@ -3830,7 +3830,7 @@
 		$last_error = $qfh_ret[3];
 
 		$feed_self_url = get_self_url_prefix() .
-			"/backend.php?op=rss&id=-2&key=" .
+			"/public.php?op=rss&id=-2&key=" .
 			get_feed_access_key($link, -2, false);
 
 		if (!$feed_site_url) $feed_site_url = get_self_url_prefix();
@@ -4239,7 +4239,7 @@
 
 		if (PUBSUBHUBBUB_HUB) {
 			$rss_link = get_self_url_prefix() .
-				"/backend.php?op=rss&id=-2&key=" .
+				"/public.php?op=rss&id=-2&key=" .
 				get_feed_access_key($link, -2, false);
 
 			$p = new Publisher(PUBSUBHUBBUB_HUB);
@@ -4378,7 +4378,7 @@
 		}
 
 		$rss_link = htmlspecialchars(get_self_url_prefix() .
-			"/backend.php?op=rss&id=$feed_id$cat_q$search_q");
+			"/public.php?op=rss&id=$feed_id$cat_q$search_q");
 
 		$reply .= "<option value=\"0\" disabled=\"1\">".__('Feed:')."</option>";
 

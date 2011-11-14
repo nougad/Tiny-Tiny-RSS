@@ -69,7 +69,7 @@
 			<?php echo __('Hello,') ?> <b><?php echo $_SESSION["name"] ?></b> |
 	<?php } ?>
 	<?php if (!SINGLE_USER_MODE) { ?>
-			<a href="backend.php?op=logout"><?php echo __('Logout') ?></a>
+			<a href="public.php?op=logout"><?php echo __('Logout') ?></a>
 	<?php } ?>
 	</div>
 

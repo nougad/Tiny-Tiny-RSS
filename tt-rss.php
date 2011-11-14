@@ -79,7 +79,7 @@
 	<?php } ?>
 
 	<?php if (!SINGLE_USER_MODE) { ?>
-			| <a href="backend.php?op=logout"><?php echo __('Logout') ?></a>
+			| <a href="public.php?op=logout"><?php echo __('Logout') ?></a>
 	<?php } ?>
 
 	<img id="newVersionIcon" style="display:none" onclick="newVersionDlg()"
