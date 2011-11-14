@@ -7544,10 +7544,16 @@
 
 			_debug("Updating: " . $line['access_url'] . " ($id)");
 
-			$fetch_url = $line['access_url'] . '/backend.php?op=fbexport';
+			$fetch_url = $line['access_url'] . '/public.php?op=fbexport';
 			$post_query = 'key=' . $line['access_key'];
 
 			$feeds = fetch_file_contents($fetch_url, false, false, false, $post_query);
+
+			if (!$feeds || !(json_decode($feeds, true)['error'])) {
+				$fetch_url = $line['access_url'] . '/backend.php?op=fbexport';
+				$post_query = 'key=' . $line['access_key'];
+				$feeds = fetch_file_contents($fetch_url, false, false, false, $post_query);
+			}
 
 			if ($feeds) {
 				$feeds = json_decode($feeds, true);
